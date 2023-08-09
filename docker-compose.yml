@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  nodejs-solid-api-pg:
+    image: bitnami/postgresql
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=find_a_friend_db
+    ports:
+      - 5432:5432
