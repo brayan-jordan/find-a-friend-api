@@ -4,7 +4,6 @@ import { extname, resolve } from 'node:path'
 import { createWriteStream, mkdirSync } from 'node:fs'
 import { promisify } from 'node:util'
 import { pipeline } from 'node:stream'
-import { PhotosRepository } from '@/repositories/photos-repository'
 
 interface UploadPhotoUseCaseRequest {
   upload: MultipartFile
@@ -17,8 +16,6 @@ interface UploadPhotoUseCaseResponse {
 }
 
 export class UploadPhotoUseCase {
-  constructor(private photosRepository: PhotosRepository) {}
-
   pump = promisify(pipeline)
   async execute({
     upload,
@@ -41,10 +38,6 @@ export class UploadPhotoUseCase {
 
     const fullUrl = requestProtocol.concat('://').concat(requestHostname)
     const url = new URL(`/photos/${fileName}`, fullUrl).toString()
-
-    await this.photosRepository.create({
-      url,
-    })
 
     return {
       url,
