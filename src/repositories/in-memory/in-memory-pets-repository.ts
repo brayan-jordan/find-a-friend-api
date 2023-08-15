@@ -73,6 +73,7 @@ export class InMemoryPetsRepository implements PetsRepository {
         name: 'Typescript Org',
         city: 'Typescript City',
         state: 'TS',
+        userId: 'user_1',
       },
       photos: [],
     }

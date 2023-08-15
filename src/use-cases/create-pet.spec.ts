@@ -21,6 +21,7 @@ describe('Create pet use case', () => {
       name: 'Seu cãopanheiro',
       city: 'TypeScript City',
       state: 'TS',
+      userId: 'user_1',
     })
 
     const { pet } = await sut.execute({
