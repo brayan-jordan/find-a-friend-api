@@ -28,9 +28,16 @@ enum PetLevel {
   HIGH
 }
 
+enum PetSpecie {
+  DOG
+  CAT
+}
+
 model Org {
-  id   String @id @default(uuid())
-  name String
+  id    String @id @default(uuid())
+  name  String
+  city  String
+  state String
 
   pets Pet[]
 
@@ -46,6 +53,7 @@ model Pet {
   size              PetSize
   energyLevel       PetLevel
   independenceLevel PetLevel
+  specie            PetSpecie
 
   requirement Requirement[]
   photos      Photo[]

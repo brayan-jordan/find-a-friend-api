@@ -19,6 +19,8 @@ describe('Create pet use case', () => {
     orgsRepository.items.push({
       id: 'org_1',
       name: 'Seu cãopanheiro',
+      city: 'TypeScript City',
+      state: 'TS',
     })
 
     const { pet } = await sut.execute({
@@ -26,6 +28,7 @@ describe('Create pet use case', () => {
       age: 'PUPPY',
       energyLevel: 'HIGH',
       independenceLevel: 'LOW',
+      specie: 'DOG',
       name: 'name',
       orgId: 'org_1',
       photos: ['photo_1', 'photo_2'],
@@ -46,6 +49,7 @@ describe('Create pet use case', () => {
         about: 'about',
         age: 'PUPPY',
         energyLevel: 'HIGH',
+        specie: 'DOG',
         independenceLevel: 'LOW',
         name: 'name',
         orgId: 'org_1',
