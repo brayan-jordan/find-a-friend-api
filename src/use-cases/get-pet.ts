@@ -1,13 +1,13 @@
 import { PetsRepository } from '@/repositories/pets-repository'
 import { ResourceNotFoundError } from './errors/resource-not-found-error'
-import { PetWithOrg } from '@/@types/entities-with-relations'
+import { PetWithRelations } from '@/@types/entities-with-relations'
 
 interface GetPetUseCaseRequest {
   id: string
 }
 
 interface GetPetUseCaseResponse {
-  pet: PetWithOrg
+  pet: PetWithRelations
 }
 
 export class GetPetUseCase {

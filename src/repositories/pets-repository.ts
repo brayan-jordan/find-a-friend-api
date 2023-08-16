@@ -1,4 +1,4 @@
-import { PetWithOrg } from '@/@types/entities-with-relations'
+import { PetWithRelations } from '@/@types/entities-with-relations'
 import {
   Pet,
   PetAge,
@@ -19,5 +19,5 @@ export interface PetsRepository {
     independenceLevel?: PetLevel,
     specie?: PetSpecie,
   ): Promise<Pet[]>
-  findById(id: string): Promise<PetWithOrg | null>
+  findById(id: string): Promise<PetWithRelations | null>
 }

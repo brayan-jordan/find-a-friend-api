@@ -1,6 +1,6 @@
 import { Prisma } from '@prisma/client'
 
-type PetWithOrg = Prisma.PetGetPayload<{
+type PetWithRelations = Prisma.PetGetPayload<{
   include: {
     org: true
     photos: true

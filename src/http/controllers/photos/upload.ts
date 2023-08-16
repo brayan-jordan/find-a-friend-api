@@ -1,4 +1,4 @@
-import { makeUploadPhotoUseCase } from '@/use-cases/factories/make-upload-photo'
+import { makeUploadPhotoUseCase } from '@/use-cases/factories/make-upload-photo-use-case'
 import { FastifyReply, FastifyRequest } from 'fastify'
 
 export async function upload(request: FastifyRequest, reply: FastifyReply) {
