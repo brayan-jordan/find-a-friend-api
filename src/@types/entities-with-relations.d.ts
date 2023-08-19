@@ -6,3 +6,9 @@ type PetWithRelations = Prisma.PetGetPayload<{
     photos: true
   }
 }>
+
+type UserWithOrg = Prisma.UserGetPayload<{
+  include: {
+    isOrg: true
+  }
+}>

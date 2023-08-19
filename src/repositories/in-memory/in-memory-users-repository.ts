@@ -24,6 +24,6 @@ export class InMemoryUsersRepository implements UsersRepository {
       return null
     }
 
-    return user
+    return { ...user, isOrg: null }
   }
 }
