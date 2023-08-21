@@ -34,10 +34,12 @@ enum PetSpecie {
 }
 
 model Org {
-  id    String @id @default(uuid())
-  name  String
-  city  String
-  state String
+  id      String @id @default(uuid())
+  name    String
+  city    String
+  state   String
+  address String
+  phone   String
 
   user   User   @relation(fields: [userId], references: [id])
   userId String @unique

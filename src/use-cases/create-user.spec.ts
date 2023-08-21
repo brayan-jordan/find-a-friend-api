@@ -33,6 +33,8 @@ describe('Create user use case', () => {
           city: 'any_city',
           name: 'any_org_name',
           state: 'any_state',
+          address: 'any_address',
+          phone: 'any_phone',
         },
       },
     })
