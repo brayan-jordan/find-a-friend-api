@@ -8,14 +8,28 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
     email: z.string().email(),
     name: z.string(),
     password: z.string().min(6),
+    org: z
+      .object({
+        city: z.string(),
+        name: z.string(),
+        state: z.string(),
+        address: z.string(),
+        phone: z.string(),
+      })
+      .optional(),
   })
 
-  const { email, name, password } = createBodySchema.parse(request.body)
+  const { email, name, password, org } = createBodySchema.parse(request.body)
 
   try {
     const createUserUseCase = makeCreateUserUseCase()
 
-    await createUserUseCase.execute({ email, name, password })
+    await createUserUseCase.execute({
+      email,
+      name,
+      password,
+      org: org ? { create: org } : undefined,
+    })
 
     return reply.status(201).send()
   } catch (err) {
